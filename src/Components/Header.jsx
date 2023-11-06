@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { auth } from "../Utils/firebase"
 import { signOut } from "firebase/auth";
 import { useDispatch, useSelector } from 'react-redux';
-import { createBrowserRouter, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { addUser, removeUser } from "../Utils/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import { LOGO_URL, USER_PROFILE } from '../Utils/constants';
@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <div className={(user === null) ? 'absolute px-8 py-2 bg-black opacity-80 z-10 w-full flex justify-between' :
-      'absolute px-8 py-2 bg-black z-10 w-full flex justify-between'} >
+      'absolute px-8 py-2 bg-black z-10 w-screen flex justify-between'} >
       <img className="w-32 h-12" src={LOGO_URL} alt='logo' />
 
 

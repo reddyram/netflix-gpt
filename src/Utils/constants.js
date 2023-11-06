@@ -13,4 +13,4 @@ export const API_OPTIONS = {
   },
 };
 
-export const BG_URL = "https://image.tmdb.org/t/p/w440_and_h660_face";
+export const POSTER_PATH = "https://image.tmdb.org/t/p/w440_and_h660_face";
