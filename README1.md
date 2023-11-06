@@ -15,3 +15,9 @@
 - Update Profile
 - Build Movies
 - Fetch from TMDB movies
+- custom hooks for now playing movie
+- create movie slice
+- update store with movie data
+- fetch data for trailer video
+- update store with trailer video data
+- embedded yt video and make it autplay and mute
