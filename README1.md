@@ -21,3 +21,4 @@
 - fetch data for trailer video
 - update store with trailer video data
 - embedded yt video and make it autplay and mute
+- Build secondary component with different movie lists (custom hooks for each movie type)
