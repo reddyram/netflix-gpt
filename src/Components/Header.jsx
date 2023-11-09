@@ -7,6 +7,8 @@ import { addUser, removeUser } from "../Utils/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import { LOGO_URL, USER_PROFILE } from '../Utils/constants';
 import { togglegptSearchView } from '../Utils/gptSlice';
+import { addMovieSearchObjects } from '../Utils/movieSlice';
+import { addMovieSearchResults } from '../Utils/movieSlice';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -16,6 +18,9 @@ const Header = () => {
 
   const handleGptClick = () => {
     dispatch(togglegptSearchView());
+    dispatch(addMovieSearchObjects(null));
+    dispatch(addMovieSearchResults(null));
+
   }
 
 
