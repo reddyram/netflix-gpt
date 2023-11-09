@@ -10,7 +10,8 @@ import { togglegptSearchView } from '../Utils/gptSlice';
 import { addMovieSearchObjects } from '../Utils/movieSlice';
 import { addMovieSearchResults } from '../Utils/movieSlice';
 
-const Header = () => {
+
+const Header = ({ redirect = true }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector(store => store.user);
@@ -20,7 +21,6 @@ const Header = () => {
     dispatch(togglegptSearchView());
     dispatch(addMovieSearchObjects(null));
     dispatch(addMovieSearchResults(null));
-
   }
 
 
@@ -40,7 +40,11 @@ const Header = () => {
         // https://firebase.google.com/docs/reference/js/auth.user
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
-        navigate("/browse");
+
+        if (redirect) {
+
+          navigate("/browse");
+        }
         // ...
       } else {
         // User is signed out
