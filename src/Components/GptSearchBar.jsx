@@ -32,13 +32,11 @@ const GptSearchBar = () => {
     const searchResults = useSelector(store => store.movies?.movieSearchRes);
     //console.log(searchResults);
 
-
-
     return (
-        <div className='border-black bg-black'>
-            <form className='flex p-[5%] justify-center'>
-                <input ref={searchText} type='text' className=' w-3/4 p-4 m-4 border-solid 2px black rounded-lg' placeholder='What would you like to watch today?' />
-                <button className='m-4 bg-red-800 w-[150px] rounded-lg text-white h-[50px]' onClick={handleSearchBtn}>Search</button>
+        <div className='border-black'>
+            <form className='flex flex-col sm:flex-row justify-center items-center'>
+                <input ref={searchText} type='text' className='w-[90%] md:w-3/4 p-4 my-4 border-solid 2px black rounded-lg' placeholder='What would you like to watch today?' />
+                <button className='m-4 bg-red-800 w-[100px] rounded-lg text-white h-[50px]' onClick={handleSearchBtn}>Search</button>
             </form>
         </div>
     )

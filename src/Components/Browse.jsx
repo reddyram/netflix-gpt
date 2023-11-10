@@ -22,6 +22,7 @@ const Browse = () => {
       {gptSearchView ? <GptSearch /> : <><MainContainer />
         <SecondaryContainer /></>}
 
+
     </div>
   )
 }

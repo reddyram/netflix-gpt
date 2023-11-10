@@ -12,16 +12,16 @@ const GptMovieSuggestions = () => {
 
     //console.log(searchResults);
     return (
-        <div className='bg-black h-screen'>
-            <h1 className='text-3xl font-bold pl-12'>Search Results</h1>
-            <div className="relative pl-12">
+        <div className='bg-black opacity-90 h-full'>
+            < h1 className='text-3xl font-bold pl-12' > Search Results</h1 >
+            <div className="relative pl-2 md:pl-12">
                 {
                     searchResults ? <MovieList title={"Search Results"} moviesdata={searchResults} /> : null
 
                 }
 
             </div>
-        </div>
+        </div >
     )
 }
 

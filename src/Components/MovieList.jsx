@@ -7,8 +7,8 @@ const MovieList = ({ title, moviesdata }) => {
     return (
         <div className=''>
             <h1 className='text-3xl font-bold text-white'>{title}</h1>
-            <div className='flex overflow-x-scroll no-scrollbar mt-4'>
-                <div className='flex'>
+            <div className='flex mt-5'>
+                <div className='flex flex-wrap justify-center sm:justify-start items-center'>
                     {
                         moviesdata?.map((mv) =>
                             <MovieCard mv={mv} key={mv.id} />
