@@ -1,10 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "./Header";
 import useGetMovieDetails from "../hooks/useGetMovieDetails";
 import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
 import { POSTER_PATH } from "../Utils/constants";
 
-const MovieDetails = ({}) => {
+const MovieDetails = ({ }) => {
   const { movieId } = useParams(); // gives url params 'movieId'
 
   useGetMovieDetails({ movieId });
@@ -14,7 +14,9 @@ const MovieDetails = ({}) => {
 
   return (
     <div className="bg-black h-screen">
+
       <Header redirect={false} />
+
       <div className="flex justify-center pt-32 w-[900px] m-auto">
         <img
           alt="MovieImage"

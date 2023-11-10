@@ -5,6 +5,7 @@ import { addTopRated } from "../Utils/movieSlice";
 
 const useTopRatedMovies = () => {
   const dispatch = useDispatch();
+  const topRatedMovies = useSelector((store) => store.movies.topRated);
 
   const getTopratedMovies = async () => {
     const data = await fetch(
@@ -17,7 +18,7 @@ const useTopRatedMovies = () => {
   };
 
   useEffect(() => {
-    getTopratedMovies();
+    !topRatedMovies && getTopratedMovies();
   }, []);
 };
 

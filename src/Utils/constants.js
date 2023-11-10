@@ -8,8 +8,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMGQwMDAxYzkyMDQzYjkyZDBjZWNlMTMwMWUzY2EzMyIsInN1YiI6IjY1NDdiMGMwNDFhNTYxMzM2OTNhZTUwNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4XrjWq4K6JRqCiP0Kt9ToCduj1X0Rcf5PxEW-Vlmc5g",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -18,4 +17,4 @@ export const POSTER_PATH = "https://image.tmdb.org/t/p/w440_and_h660_face";
 export const BG_IMAGE =
   "https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/0efe6360-4f6d-4b10-beb6-81e0762cfe81/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg";
 
-export const GPT_KEY = "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";
+export const GPT_KEY = process.env.REACT_APP_GPT_KEY;
