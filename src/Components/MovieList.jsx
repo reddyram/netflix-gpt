@@ -8,7 +8,7 @@ const MovieList = ({ title, moviesdata }) => {
         <div className=''>
             <h1 className='pl-4 sm:pl-0 text-3xl font-bold text-white'>{title}</h1>
             <div className='flex mt-5'>
-                <div className='flex flex-wrap sm:flex-nowrap sm:overflow-auto justify-center sm:justify-start items-center'>
+                <div className='[&::-webkit-scrollbar]:hidden flex flex-wrap sm:flex-nowrap sm:overflow-auto justify-center sm:justify-start items-center'>
                     {
                         moviesdata?.map((mv) =>
                             <MovieCard mv={mv} key={mv.id} />
