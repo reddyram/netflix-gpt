@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 const VideoTitle = ({ title, overview, id }) => {
   const navigate = useNavigate();
-  console.log(id)
   const handleMoreInfo = () => {
     navigate("/movie/" + id);
   }

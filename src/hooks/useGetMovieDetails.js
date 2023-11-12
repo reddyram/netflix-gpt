@@ -7,18 +7,16 @@ const useGetMovieDetails = ({ movieId }) => {
   const dispatch = useDispatch();
 
   const api_url = "https://api.themoviedb.org/3/movie/" + movieId;
-  console.log(api_url);
 
   const getMovieDetails = async () => {
     const data = await fetch(api_url, API_OPTIONS);
     const json = await data.json();
-    console.log(json);
     dispatch(addMovieDetails(json));
   };
 
   useEffect(() => {
     getMovieDetails();
-  }, []);
+  }, [movieId]);
 };
 
 export default useGetMovieDetails;

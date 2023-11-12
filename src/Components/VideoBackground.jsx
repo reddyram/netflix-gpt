@@ -4,12 +4,10 @@ import useGetTrailer from '../hooks/useGetTrailer';
 import { POSTER_PATH } from '../Utils/constants';
 
 const VideoBackground = ({ id }) => {
-    console.log(id);
 
     useGetTrailer({ id });
     const trailerVideo = useSelector(store => store.movies?.trailerVideo);
-    const bg_image = useSelector(store => store.movies?.nowPlayingMovies?.results[0]?.poster_path)
-    console.log(bg_image);
+    const bg_image = useSelector(store => store.movies?.nowPlayingMovies?.results[0]?.poster_path);
 
 
     return (

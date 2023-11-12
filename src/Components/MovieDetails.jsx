@@ -3,14 +3,18 @@ import Header from "./Header";
 import useGetMovieDetails from "../hooks/useGetMovieDetails";
 import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
 import { POSTER_PATH } from "../Utils/constants";
+import useGetCastDetails from "../hooks/useGetCastDetails";
+import CastCards from "./CastCards";
 
-const MovieDetails = ({ }) => {
+const MovieDetails = () => {
   const { movieId } = useParams(); // gives url params 'movieId'
 
+  useGetCastDetails({ movieId });
   useGetMovieDetails({ movieId });
 
   const movieDetails = useSelector((store) => store?.movies?.movieDetails);
   const movieGenres = movieDetails?.genres.map((gen) => gen.name + " ");
+  const castDetails = useSelector((store) => store?.movies?.castDetails);
 
   return (
     <div className=" bg-slate-950">
@@ -39,6 +43,9 @@ const MovieDetails = ({ }) => {
           </div>
         </div>
       </div>
+
+      <CastCards cast={castDetails?.cast} />
+
 
 
     </div>
