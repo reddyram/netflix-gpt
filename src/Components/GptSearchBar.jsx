@@ -10,18 +10,26 @@ import MovieList from './MovieList';
 const GptSearchBar = () => {
     const searchText = useRef(null);
     const dispatch = useDispatch();
-
+    console.log(searchText);
 
     const handleSearchBtn = async (e) => {
         e.preventDefault();
+        if (!searchText.current.value.trim()) {
+            return;
+        }
         const srchTxt = searchText.current.value;
 
-        const gptQuery = "Act as a movie recommendation engine and suggest some movies for the query: " + srchTxt + ". Only give me 5 movies as comma separated like the example ahead. Example: Don, Don, 3 idiots, sholay, abcd";
-        const gptResults = await openai.chat.completions.create({
-            messages: [{ role: 'user', content: gptQuery }],
-            model: 'gpt-3.5-turbo',
-        });
-        dispatch(addMovieSearchResults(gptResults.choices[0]?.message?.content));
+        try {
+            const gptQuery = "Act as a movie recommendation engine and suggest some movies for the query: " + srchTxt + ". Only give me 5 movies as comma separated like the example ahead. Example: Don, Don, 3 idiots, sholay, abcd";
+            const gptResults = await openai.chat.completions.create({
+                messages: [{ role: 'user', content: gptQuery }],
+                model: 'gpt-3.5-turbo',
+            });
+            dispatch(addMovieSearchResults(gptResults.choices[0]?.message?.content));
+        }
+        catch (error) {
+            console.error("Error fetching movie recommendations:", error);
+        }
     }
 
     //const searchResults = useSelector(store => store.movies?.movieSearch).split(",");
